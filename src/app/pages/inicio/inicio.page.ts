@@ -10,7 +10,7 @@ export class InicioPage implements OnInit {
   componenentes: Componente[] = [
     { icon: 'american-football', name: 'Action sheet', redirectTo: '/action-sheet' },
     { icon: 'logo-google-playstore', name: 'Alert', redirectTo: '/alert' },
-
+    { icon: 'card', name: 'Card', redirectTo: '/card' },
   ];
 
   constructor() { }
