@@ -12,8 +12,7 @@ export class InicioPage implements OnInit {
     { icon: 'logo-google-playstore', name: 'Alert', redirectTo: '/alert' },
     { icon: 'beaker', name: 'Avatar', redirectTo: '/avatar' },
     { icon: 'radio-button-on', name: 'Buttons and router', redirectTo: '/bottons' },
-
-
+    { icon: 'card', name: 'Card', redirectTo: '/card' },
   ];
 
   constructor() { }
