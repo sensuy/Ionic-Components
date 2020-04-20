@@ -17,6 +17,8 @@ export class InicioPage implements OnInit {
     { icon: 'calendar', name: 'DateTime', redirectTo: '/date-time' },
     { icon: 'car', name: 'Fabs', redirectTo: '/fab' },
     { icon: 'grid', name: 'Grid - Rows', redirectTo: '/grid' },
+    { icon: 'infinite', name: 'Infinit Scroll', redirectTo: '/infinite-scroll' },
+    { icon: 'hammer', name: 'Input - Forms', redirectTo: '/input' },
 
   ];
 
