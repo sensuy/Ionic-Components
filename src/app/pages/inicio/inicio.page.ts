@@ -1,4 +1,9 @@
+
 import { Component, OnInit } from '@angular/core';
+import { MenuController } from '@ionic/angular';
+import { Componente } from 'src/app/interfaces/interfaces';
+import { Observable } from 'rxjs';
+import { DataService } from 'src/app/services/data.service';
 
 @Component({
   selector: 'app-inicio',
@@ -7,33 +12,20 @@ import { Component, OnInit } from '@angular/core';
 })
 export class InicioPage implements OnInit {
 
-  componenentes: Componente[] = [
-    { icon: 'american-football', name: 'Action sheet', redirectTo: '/action-sheet' },
-    { icon: 'logo-google-playstore', name: 'Alert', redirectTo: '/alert' },
-    { icon: 'beaker', name: 'Avatar', redirectTo: '/avatar' },
-    { icon: 'radio-button-on', name: 'Buttons and router', redirectTo: '/bottons' },
-    { icon: 'card', name: 'Card', redirectTo: '/card' },
-    { icon: 'checkmark-circle-outline', name: 'Checkbox', redirectTo: '/check' },
-    { icon: 'calendar', name: 'DateTime', redirectTo: '/date-time' },
-    { icon: 'car', name: 'Fabs', redirectTo: '/fab' },
-    { icon: 'grid', name: 'Grid - Rows', redirectTo: '/grid' },
-    { icon: 'infinite', name: 'Infinit Scroll', redirectTo: '/infinite-scroll' },
-    { icon: 'hammer', name: 'Input - Forms', redirectTo: '/input' },
-    { icon: 'list', name: 'Listas - Sliding', redirectTo: '/list' },
-    { icon: 'reorder-four', name: 'Listas - Reorder', redirectTo: '/list-reorder' },
-    { icon: 'refresh-circle', name: 'Loading', redirectTo: '/loading' },
+  componenentes: Observable<Componente[]>;
 
-  ];
-
-  constructor() { }
+  constructor(
+    private menuCtrl: MenuController,
+    private dataService: DataService
+  ) { }
 
   ngOnInit() {
+    this.componenentes = this.dataService.getMenuOpts();
   }
 
-}
 
-interface Componente {
-  icon: string;
-  name: string;
-  redirectTo: string;
+  toggleMenu() {
+    this.menuCtrl.toggle();
+  }
+
 }

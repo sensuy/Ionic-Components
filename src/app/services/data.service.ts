@@ -1,3 +1,4 @@
+import { Componente } from './../interfaces/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 
@@ -12,5 +13,9 @@ export class DataService {
 
   getUsers() {
     return this.httpClient.get('https://jsonplaceholder.typicode.com/users');
+  }
+
+  getMenuOpts() {
+    return this.httpClient.get<Componente[]>('/assets/data/menu.json');
   }
 }
