@@ -1,6 +1,7 @@
 import { Componente } from './../interfaces/interfaces';
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { delay } from 'rxjs/operators';
 
 @Injectable({
   providedIn: 'root'
@@ -17,5 +18,15 @@ export class DataService {
 
   getMenuOpts() {
     return this.httpClient.get<Componente[]>('/assets/data/menu.json');
+  }
+
+  getAlbumes() {
+    return this.httpClient.get<any[]>('https://jsonplaceholder.typicode.com/albums');
+  }
+
+  getHeroes() {
+    return this.httpClient.get('/assets/data/superHeroes.json').pipe(
+      delay(1500)
+    );
   }
 }
